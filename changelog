@@ -1,0 +1,211 @@
+0.63 23apr19
+* added support for WT0124 pool sensor
+
+0.62 08apr19
+* added support for WH32B sensor.  thanks to user steepleian!
+
+0.61 11mar19
+* fix packet name for WH31E
+
+0.60 06mar19
+* deal with rtl_433 output changes to OSBHTR968 packets
+
+0.59 03mar19
+* report packet that resulted in unmapped lines.  thanks to user wjcarpenter!
+* provide better feedback when rtl_433 not found
+* formatting changes to keep PEP happy
+
+0.58 15feb19
+* added support for OSRGR968 and OSTHGR968 packets.  thanks to user chaoschris!
+* fixed improper invocation of get_int for WH31 sensor
+
+0.57 14feb19
+* support the WH31 sensor.  thanks to user phinnay!
+
+0.56 14feb19
+* remove the light_lux multiplier.  if you can to convert to radiation, do it
+  using StdWXCalculate, and beware that there is no way to properly convert
+  lux to solar radiation
+
+0.55 10feb19
+* added support for fine offset WH24 sensors
+
+0.54 22jan19
+* fixed typo in acurite 5n1 parsing
+
+0.53 20jan19
+* added support for Alecto rain packets.  thanks Roberto Verrelli!
+
+0.52 20jan19
+* adjust parsing for Bresser 5n1 to deal with different json formats
+
+0.51 20jan19
+* added support for AlectoV1 wind packets.  thanks Roberto Verrelli!
+* added support for Springfied temperature/moisture sensors
+
+0.50 03jan19
+* attempt to deal with the ever-chaning acurite5n1 packet labels
+
+0.49 30dec18
+* added support for bresser 5in1 (thanks to user mercurystorm)
+
+0.48 20dec18
+* added support for WH25 battery bit (thanks to StephenRO)
+* added support for FOWH65B (ambient WS2902A) (thanks to StephenRO)
+* ensure that sensor_id is rendered as a string (issue #32 by user dbrb2)
+
+0.47 25sep18
+* rtl_433 now emits 'pressure_hPa' not 'pressure' for FOWH25 packets
+
+0.46 31aug18
+* added json support for PCR800. thanks to andylittle
+* added json support for wgr800 and rain pcr800.  thanks to linda eriksson!
+* added support for humidity in Nexus.  thanks to gazza (gary)!
+
+0.45 29aug18
+* added support for AlectoV1Packets (Ventus W044 thermo/hydro).  thanks Adam!
+* added support for FOWH2Packets.  thanks to Adam Sjogren!
+
+0.44 21jul18
+* output from rtl_433 continues to be a moving target
+
+0.43 21jul18
+* fix battery status for acurite tower packets
+* fix battery status for acurite lightning packets
+
+0.42 06jul18
+* fix units for FOWH1080Packet - m/s and mm not kph and cm.  thanks millallo!
+
+0.41 06jul18
+* added support for acurite 986 json format
+* try to make some acurite packet identifiers more robust
+
+0.40 06jul18
+* deal with acurite 5in1 changes in rtl_433.  thanks to user andylittle!
+* deal with acurite lightning sensor changes in rtl_433.  thanks to mlfreeman2!
+* added support for Nexus temperature sensor.  thanks to user vg8020!
+
+0.39 01jan17
+* deal with change from wind_speed to wind_speed_mph for rtl433 parsing of 5in1
+
+0.38 10dec17
+* hardware_name is a property
+
+0.37 01nov17
+* deal with more changes to field names from rtl_433 for wh1080/wh3080
+
+0.36 18sep17
+* do not use id as a packet dictionary key
+
+0.35 15sep17
+* fix sensor id for acurite WT450
+
+0.34 15sep17
+* added support for acurite WT450 rain sensor
+
+0.33 09aug17
+* fix bogus whitespace from kk6fut pull request
+
+0.32 04aug17
+* deal with fine offset wh3080 output from different rtl_433 versions
+
+0.31 03aug2017
+* added support for THN802 and BTHGN129.  thanks to dartvader85!
+
+0.30 20jul2017
+* added support for lacrosse tx sensor.  thanks to kk6fut!
+
+0.29 17may2017
+* fixed non-ascii character in the comments
+
+0.28 16may2017
+* added support for fine offset wh3080 packets
+
+0.27 11apr2017
+* added support for oregon scientific BTHR968.  thanks to Art Greenberg!
+
+0.26 02apr2017
+* added support for fine offset wh25 packets.  thanks to John Voss!
+
+0.25 20mar2017
+* added support for acurite 606TX sensors.  thanks to Karl Kremer!
+
+0.24 19mar2017
+* deal with rtl_433 changes to acurite lightning sensor
+* added support for prologue sensors.  thanks to user Karl Kremer!
+
+0.23 09mar2017
+* added support for acurite 00275RM
+
+0.22 16feb2017
+* deal with hex message types in acurite lightning packets
+
+0.21 30jan2017
+* added support for oregon scientific UVN800
+
+0.20 21jan2017
+* added parsing for ambient F007TH sensors
+
+0.19 20jan2017
+* fix sign on rubicson temperature sensor parser
+* fix sign on acurite 968 packet parser
+* fix sign on acurite lightning packet parser
+
+0.18 18jan2017
+* consolidate oregon scientific identifiers
+
+0.17 17jan2017
+* added json support for Rubicson temperature sensor
+
+0.16 16jan2017
+* added support for Rubicson temperature sensor
+* ensure hex identifiers for acurite sensors
+* just kill the rtl_433 process instead of trying to terminate it
+
+0.15 15jan2017
+* default to json format (-F json)
+* json support for acurite 5-in-1 sensors
+* added support for hideki wind and rain packets
+* added support for lacrosse TX141TH-Bv2 packets
+* default to loading all rtl decoders (-G)
+
+0.14 12jan2017
+* provide more feedback during shutdown for debugging
+* attempt to do better shutdown of rtl_433 process
+* fixed bug in delta reporting log message
+
+0.13 11jan2017
+* deal with changes to acurite decoder in rtl-433 - use json now
+
+0.12 03nov2016
+* added option to enumerate supported sensors
+* added support for OS WGR800 and PCR800 sensors
+* added support for lacrosse rainfall messages
+* provide feedback when no permission to read usb device
+* added support for Calibeur RF104 sensors
+* added support for acurite lightning sensor
+* handle negative temperatures
+* added experimental support for json format
+
+0.11 31oct2016
+* added parser for acurite 986 packets (thanks to andy)
+* removed vestigial code from data_type
+* use glob matching for sensor identifier tuple components
+
+0.9 29sep2016
+* added generic support for rain_total and other cumulative measures
+* for acurite 5n1, get rain from type 31 message instead of reset message
+
+0.8 25sep2016
+* added support for OSTHGR122NPacket (thanks to marco tibaldi)
+
+0.7 12sep2016
+* improved process management
+* report errors better during startup
+* use new mapping syntax output=input
+* added comments about how to configure
+* options to log unparsed packets
+* options to log unmapped data from parsed packets
+
+0.1 30mar2016
+* initial release
